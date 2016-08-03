@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Garden.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LoginUser">
+          <Key>
+            <PropertyRef Name="loginID" />
+          </Key>
+          <Property Name="loginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="userTypeID" Type="int" Nullable="false" />
+          <Property Name="loginName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="loginPassword" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="loginFailCount" Type="int" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="zipCode" Type="varchar" MaxLength="10" />
+          <Property Name="isTaskEmail" Type="varchar" MaxLength="50" />
+          <Property Name="isOutOffice" Type="bit" />
+          <Property Name="PWExpireDate" Type="datetime" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+          <Property Name="createBy" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="updateDate" Type="datetime" />
+          <Property Name="updateBy" Type="varchar" MaxLength="30" />
+          <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="isSetDefaultDivision" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="GardenStoreContainer">
+          <EntitySet Name="LoginUser" EntityType="Self.LoginUser" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Garden" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LoginUser">
+          <Key>
+            <PropertyRef Name="loginID" />
+          </Key>
+          <Property Name="loginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userTypeID" Type="Int32" Nullable="false" />
+          <Property Name="loginName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="loginPassword" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="loginFailCount" Type="Int32" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="zipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="isTaskEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isOutOffice" Type="Boolean" />
+          <Property Name="PWExpireDate" Type="DateTime" Precision="3" />
+          <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="createBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="updateDate" Type="DateTime" Precision="3" />
+          <Property Name="updateBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="isSetDefaultDivision" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LoginUser" EntityType="Self.LoginUser" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GardenStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="LoginUser">
+            <EntityTypeMapping TypeName="Garden.LoginUser">
+              <MappingFragment StoreEntitySet="LoginUser">
+                <ScalarProperty Name="loginID" ColumnName="loginID" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="userTypeID" ColumnName="userTypeID" />
+                <ScalarProperty Name="loginName" ColumnName="loginName" />
+                <ScalarProperty Name="loginPassword" ColumnName="loginPassword" />
+                <ScalarProperty Name="loginFailCount" ColumnName="loginFailCount" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+                <ScalarProperty Name="isTaskEmail" ColumnName="isTaskEmail" />
+                <ScalarProperty Name="isOutOffice" ColumnName="isOutOffice" />
+                <ScalarProperty Name="PWExpireDate" ColumnName="PWExpireDate" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="createBy" ColumnName="createBy" />
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="isSetDefaultDivision" ColumnName="isSetDefaultDivision" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
