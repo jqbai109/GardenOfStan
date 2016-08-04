@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Garden.DAL;
 using System.Collections.Generic;
 using System.Linq;
+using Garden.ViewModel;
 
 namespace UnitTestDAL
 {
@@ -12,8 +13,8 @@ namespace UnitTestDAL
         [TestMethod]
         public void TestGetLoginUser()
         {
-            GardenRepository reposition = new GardenRepository();
-            List<LoginUser> UserList = reposition.GetLoginUser().ToList();
+            GardenRepository_LoginUser reposition = new GardenRepository_LoginUser();
+            List<LoginUserViewModel> UserList = reposition.GetLoginUser().ToList();
             Assert.AreEqual(0, UserList.Count);
         }
     }

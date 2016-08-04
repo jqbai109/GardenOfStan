@@ -7,7 +7,7 @@
     <ProjectGuid>{C7684144-8B5E-4DEA-B5ED-379C63685155}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ViewModel</RootNamespace>
+    <RootNamespace>Garden.ViewModel</RootNamespace>
     <AssemblyName>ViewModel</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGarden", "WebGarden\WebGarden.csproj", "{C1219F15-C6A8-449F-840A-EF758828C7B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDAL", "IDAL\IDAL.csproj", "{02AA3F0A-D374-4910-BC0C-BB19427ACF53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,12 @@ Global
 		{C1219F15-C6A8-449F-840A-EF758828C7B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C1219F15-C6A8-449F-840A-EF758828C7B0}.Stage|Any CPU.ActiveCfg = Release|Any CPU
 		{C1219F15-C6A8-449F-840A-EF758828C7B0}.Stage|Any CPU.Build.0 = Release|Any CPU
+		{02AA3F0A-D374-4910-BC0C-BB19427ACF53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AA3F0A-D374-4910-BC0C-BB19427ACF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AA3F0A-D374-4910-BC0C-BB19427ACF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AA3F0A-D374-4910-BC0C-BB19427ACF53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AA3F0A-D374-4910-BC0C-BB19427ACF53}.Stage|Any CPU.ActiveCfg = Release|Any CPU
+		{02AA3F0A-D374-4910-BC0C-BB19427ACF53}.Stage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
