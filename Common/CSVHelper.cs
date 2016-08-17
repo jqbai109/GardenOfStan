@@ -9,7 +9,7 @@ using System.Collections;
 using System.Data;
 using System.IO;
 using System.Text.RegularExpressions;
-using LumenWorks.Framework.IO.Csv;
+
 
 namespace PromolinkUS.Common
 {
@@ -45,71 +45,73 @@ namespace PromolinkUS.Common
     {
       this._csvFile = csvFile;
     }
+    #region Comment by stan
 
-    public DataTable CsvReaderHelper()
-    {
-      DataTable dataTable = new DataTable();
-      using (CsvReader csvReader = new CsvReader((TextReader) new StreamReader(this._csvFile), true))
-      {
-        string[] fieldHeaders = csvReader.GetFieldHeaders();
-        int fieldCount = csvReader.FieldCount;
-        this.ColumnsName = fieldHeaders;
-        foreach (string columnName in fieldHeaders)
-          dataTable.Columns.Add(columnName);
-        while (csvReader.ReadNextRecord())
-        {
-          DataRow row = dataTable.NewRow();
-          for (int index = 0; index < fieldCount; ++index)
-            row[index] = (object) csvReader[index];
-          dataTable.Rows.Add(row);
-        }
-      }
-      return dataTable;
-    }
+    //public DataTable CsvReaderHelper()
+    //{
+    //    DataTable dataTable = new DataTable();
+    //    using (CsvReader csvReader = new CsvReader((TextReader)new StreamReader(this._csvFile), true))
+    //    {
+    //        string[] fieldHeaders = csvReader.GetFieldHeaders();
+    //        int fieldCount = csvReader.FieldCount;
+    //        this.ColumnsName = fieldHeaders;
+    //        foreach (string columnName in fieldHeaders)
+    //            dataTable.Columns.Add(columnName);
+    //        while (csvReader.ReadNextRecord())
+    //        {
+    //            DataRow row = dataTable.NewRow();
+    //            for (int index = 0; index < fieldCount; ++index)
+    //                row[index] = (object)csvReader[index];
+    //            dataTable.Rows.Add(row);
+    //        }
+    //    }
+    //    return dataTable;
+    //}
 
-    public DataTable CsvReaderHelperNoHeader(int priviewCount)
-    {
-      DataTable dataTable = new DataTable();
-      using (CsvReader csvReader = new CsvReader((TextReader) new StreamReader(this._csvFile), false))
-      {
-        int fieldCount = csvReader.FieldCount;
-        for (int index = 0; index < fieldCount; ++index)
-          dataTable.Columns.Add("Fields" + index.ToString());
-        int num = 0;
-        while (csvReader.ReadNextRecord())
-        {
-          ++num;
-          DataRow row = dataTable.NewRow();
-          for (int index = 0; index < fieldCount; ++index)
-            row[index] = (object) csvReader[index];
-          dataTable.Rows.Add(row);
-          if (priviewCount > 0 && num >= priviewCount)
-            break;
-        }
-      }
-      return dataTable;
-    }
+    //public DataTable CsvReaderHelperNoHeader(int priviewCount)
+    //{
+    //    DataTable dataTable = new DataTable();
+    //    using (CsvReader csvReader = new CsvReader((TextReader)new StreamReader(this._csvFile), false))
+    //    {
+    //        int fieldCount = csvReader.FieldCount;
+    //        for (int index = 0; index < fieldCount; ++index)
+    //            dataTable.Columns.Add("Fields" + index.ToString());
+    //        int num = 0;
+    //        while (csvReader.ReadNextRecord())
+    //        {
+    //            ++num;
+    //            DataRow row = dataTable.NewRow();
+    //            for (int index = 0; index < fieldCount; ++index)
+    //                row[index] = (object)csvReader[index];
+    //            dataTable.Rows.Add(row);
+    //            if (priviewCount > 0 && num >= priviewCount)
+    //                break;
+    //        }
+    //    }
+    //    return dataTable;
+    //}
 
-    public DataTable CsvReaderHelperNoHeader()
-    {
-      DataTable dataTable = new DataTable();
-      using (CsvReader csvReader = new CsvReader((TextReader) new StreamReader(this._csvFile), false))
-      {
-        int fieldCount = csvReader.FieldCount;
-        for (int index = 0; index < fieldCount; ++index)
-          dataTable.Columns.Add("Fields" + index.ToString());
-        int num = 0;
-        while (csvReader.ReadNextRecord())
-        {
-          ++num;
-          DataRow row = dataTable.NewRow();
-          for (int index = 0; index < fieldCount; ++index)
-            row[index] = (object) csvReader[index];
-          dataTable.Rows.Add(row);
-        }
-      }
-      return dataTable;
-    }
+    //public DataTable CsvReaderHelperNoHeader()
+    //{
+    //    DataTable dataTable = new DataTable();
+    //    using (CsvReader csvReader = new CsvReader((TextReader)new StreamReader(this._csvFile), false))
+    //    {
+    //        int fieldCount = csvReader.FieldCount;
+    //        for (int index = 0; index < fieldCount; ++index)
+    //            dataTable.Columns.Add("Fields" + index.ToString());
+    //        int num = 0;
+    //        while (csvReader.ReadNextRecord())
+    //        {
+    //            ++num;
+    //            DataRow row = dataTable.NewRow();
+    //            for (int index = 0; index < fieldCount; ++index)
+    //                row[index] = (object)csvReader[index];
+    //            dataTable.Rows.Add(row);
+    //        }
+    //    }
+    //    return dataTable;
+    //} 
+    #endregion
 
   //  public DataTable Read()
   //  {
